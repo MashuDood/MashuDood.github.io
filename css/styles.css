@@ -5,6 +5,10 @@ body {
   font-family: 'Montserrat Alternates', sans-serif !important;
 }
 
+div {
+  border-radius: 10px;
+}
+
 .bodyBody {
   width: 75%;
   margin: auto;
@@ -19,6 +23,12 @@ body {
 .navbar {
   background-color: #6ea1e6;
   padding: 10px 15px;
+}
+
+.brand-img {
+  max-width: 50px;
+  max-height: inherit;
+  border-radius: 50%;
 }
 
 .intro {
@@ -43,9 +53,9 @@ h1 {
 
 
 .grow {
-  padding: 5px 5px 5px 5px;
-  border-radius: 10px;
-  height: 49px;
+  padding: 5px;
+  /* border-radius: 10px; */
+  height: 70px;
   width: 22;
   position: relative;
   transition: height 0.5s;
