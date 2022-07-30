@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="A look at my YouTube channel">
+    <meta name="keywords" content="HTML, CSS, JavaScript, 3D Character Artist, VTuber, VTubing, Art, CG, Modeling, 3D Design">
+    <title>Mashu Star - Channel</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Montserrat+Alternates&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/8900736624.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="bodyBody">
+        <div class="intro">
+          <h2 class="text-center">My YouTube Channel</h2>
+          <div class="row">
+            <div class="col-lg-6">
+              <!-- <p id="video-title">Lorem ipsum</p> -->
+              <iframe class="latestVideoEmbed" vnum='0' cid="UCK8e0iNncN-25DlST7Em5TQ" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-6">
+              <h3 class="text-center">Mashu</h3>
+              <p>
+                My channel uploads everything from Blender modeling videos, to gameplay videos. I created my channel in November of 2013 and started uploading videos in 2015.
+              </p>
+              <p>
+                My very first video is privated because of several factors; including being embarrasing and boring. My latest videos include Minecraft Hardcore and Modded Skyblock live streams as well as 3D modeling streams.
+              </p>
+              <p>
+                Recently, I've been doing more live streams than edited videos because of my lack of time and mental capacity to edit them. I feel that hosting a YouTube channel is a great way to learn to speak to the public.
+              </p>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script type="text/javascript">
+              var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+
+              function loadVideo(iframe) {
+                $.getJSON(reqURL + iframe.getAttribute('cid'),
+                  function(data) {
+                    var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+                    console.log(videoNumber);
+                    var link = data.items[videoNumber].link;
+                    var title = data.items[videoNumber].title;
+                    id = link.substr(link.indexOf("=") + 1);
+                    iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1");
+                    // iframe.parentElement.querySelector("#video-title").innerText = title;
+                  }
+                );
+              }
+              var iframes = document.getElementsByClassName('latestVideoEmbed');
+              for (var i = 0, len = iframes.length; i < len; i++) {
+                loadVideo(iframes[i]);
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
