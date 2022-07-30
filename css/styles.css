@@ -20,6 +20,18 @@ div {
   }
 }
 
+p#video-title {
+  font-weight: bold;
+  background: #ffc107;
+  padding: 5px 4px;
+  font-family: serif;
+  text-align: center;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 
 /* Title Section */
 
@@ -143,4 +155,13 @@ h1 {
   background-color: #7FB5FF;
   text-align: center;
   padding: 20px 60px;
+}
+
+/* Pricing Info */
+
+.pricing-info {
+  width: 30%;
+  margin: auto;
+  font-size: 1.2em;
+  line-height: 2;
 }
